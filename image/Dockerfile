@@ -9,6 +9,8 @@ WORKDIR /app
 RUN git clone https://github.com/bpmnServer/bpmn-web.git
 WORKDIR bpmn-web
 RUN npm install
+RUN npm install bpmn-server
+RUN npm run build
 RUN npm run setup 
 RUN sed -i 's/0.0.0.0/mongo/g' .env 
 CMD [“npm”,”run start”]
