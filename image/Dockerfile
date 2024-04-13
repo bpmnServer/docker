@@ -13,5 +13,5 @@ RUN npm install bpmn-server
 RUN npm run build
 RUN npm run setup 
 RUN sed -i 's/0.0.0.0/mongo/g' .env 
-CMD [“npm”,”run start”]
+CMD npm run start
 EXPOSE 3000
